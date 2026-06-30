@@ -2,7 +2,9 @@
 
 Static source for Nic Murray's public Spotify playlists page.
 
-The production page is currently linked from `https://njmurray.com/playlists/`. This repository keeps the playlists page as its own small project so it can be deployed or reused independently from the main homepage repo.
+Canonical URL: `https://playlists.njmurray.com`.
+
+This repository is the standalone source for the playlists page.
 
 ## How The Code Works
 
@@ -32,9 +34,13 @@ http://localhost:5173/
 
 ## Deployment
 
-Any static host can serve this repo from the root directory. If deploying with Cloudflare Pages, the build command can be left blank and the output directory should be `/`.
+```sh
+npm install
+npm run deploy
+```
+
+Pushing to `main` also deploys through GitHub Actions. See [DEPLOYMENT.md](DEPLOYMENT.md) for the Pages project name and required secrets.
 
 ## Notes
 
-- Navigation links point back to the canonical `njmurray.com` pages.
-- The main homepage repo may also contain a copy of this page at `homepage/playlists/index.html` for the `/playlists/` route.
+- Navigation links point to the canonical subdomains.
