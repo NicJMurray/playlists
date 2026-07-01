@@ -4,9 +4,9 @@ Static source for Nic Murray's public Spotify playlists page.
 
 Canonical URL: `https://playlists.njmurray.com`.
 
-This repository is the standalone source for the playlists page.
+This repository is the standalone source for the playlists showcase page.
 
-## How The Code Works
+## How the code works
 
 This is a plain static HTML page:
 
@@ -18,7 +18,7 @@ This is a plain static HTML page:
 
 Because the playlist data is embedded directly in HTML, the page loads quickly and does not depend on Spotify API credentials. Updating the page means editing the playlist cards in `index.html` and committing the changed static output.
 
-## Local Development
+## Local development
 
 Open `index.html` in a browser, or serve the folder locally:
 
@@ -32,14 +32,20 @@ Then visit:
 http://localhost:5173/
 ```
 
-## Deployment
+You can also use Wrangler's local Pages server:
 
 ```sh
 npm install
-npm run deploy
+npm run dev
 ```
 
-Pushing to `main` also deploys through GitHub Actions. See [DEPLOYMENT.md](DEPLOYMENT.md) for the Pages project name and required secrets.
+## Deployment
+
+This repo should be connected directly to Cloudflare Pages using Cloudflare's Git integration.
+
+Pushing to `main` automatically deploys the site. No GitHub Actions workflow or Cloudflare API secrets are needed for this repo once it is connected in Cloudflare.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the deployment summary.
 
 ## Notes
 
