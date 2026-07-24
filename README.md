@@ -1,52 +1,28 @@
 # Spotify Playlists
 
-Static source for Nic Murray's public Spotify playlists page.
+`playlists.njmurray.com` is a deliberately simple public index of Nic’s Spotify playlists. It is a static page rather than a Spotify integration.
 
-Canonical URL: `https://playlists.njmurray.com`.
+## How it works
 
-This repository is the standalone source for the playlists showcase page.
+`index.html` contains the whole site:
 
-## How the code works
+- Each playlist is one `<a class="playlist">` card with a direct `open.spotify.com/playlist/...` link, a Spotify-hosted cover image, and a display title.
+- Cover images are loaded lazily by the browser; there is no runtime request to the Spotify API and no access token.
+- The embedded CSS creates the responsive card grid. The `:nth-child()` rules rotate accent colours across cards.
+- The inline script only updates the footer year.
+- The analytics snippet in the `<head>` is the only third-party script.
 
-This is a plain static HTML page:
+This makes the page fast and robust, but it also means the playlist list is manually curated. Editing a Spotify playlist’s title or image inside Spotify will not automatically alter this page.
 
-- `index.html` contains the layout, CSS, playlist data, and a tiny footer-year script.
-- Each playlist is an `<a class="playlist">` card.
-- Each card links directly to `https://open.spotify.com/playlist/...`.
-- Each card image uses the cover image URL from Spotify's public playlist data.
-- There is no build step, server, API call, or client-side playlist fetch.
+## Updating a playlist
 
-Because the playlist data is embedded directly in HTML, the page loads quickly and does not depend on Spotify API credentials. Updating the page means editing the playlist cards in `index.html` and committing the changed static output.
+Duplicate or edit a playlist card in `index.html` and change:
 
-## Local development
+1. the card `href` to the playlist’s canonical Spotify URL;
+2. the `<img src>` to the playlist cover image URL;
+3. the image `alt` text; and
+4. the `<h3>` title.
 
-Open `index.html` in a browser, or serve the folder locally:
+Keep `target="_blank" rel="noopener"` on external Spotify links. There is no separate data file or generated output to update.
 
-```sh
-python -m http.server 5173
-```
-
-Then visit:
-
-```txt
-http://localhost:5173/
-```
-
-You can also use Wrangler's local Pages server:
-
-```sh
-npm install
-npm run dev
-```
-
-## Deployment
-
-This repo should be connected directly to Cloudflare Pages using Cloudflare's Git integration.
-
-Pushing to `main` automatically deploys the site. No GitHub Actions workflow or Cloudflare API secrets are needed for this repo once it is connected in Cloudflare.
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for the deployment summary.
-
-## Notes
-
-- Navigation links point to the canonical subdomains.
+`wrangler.toml` only describes the Cloudflare Pages route; it is not part of the page’s runtime behaviour. `DEPLOYMENT.md` is retained for operational reference.
