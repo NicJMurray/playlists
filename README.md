@@ -1,3 +1,5 @@
+![Spotify Playlists](.github/readme-banner.svg)
+
 # Spotify Playlists
 
 Static playlist index at `playlists.njmurray.com`. It presents a manually selected set of Spotify playlists as cover cards linking to Spotify.
