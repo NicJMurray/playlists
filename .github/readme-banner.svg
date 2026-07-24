@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">Spotify Playlists</title>
+  <desc id="desc">Project banner for the static Spotify playlist index.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#cfd8d0" stroke-width="1" opacity=".55"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="320" fill="#f4f6f3"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+  <rect x="64" y="48" width="48" height="48" rx="10" fill="#c18426"/>
+  <text x="88" y="81" text-anchor="middle" fill="#fffef9" font-family="Georgia, serif" font-size="25" font-weight="700">N</text>
+  <text x="64" y="139" fill="#66716b" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3">MUSIC / ARCHIVE</text>
+  <text x="64" y="207" fill="#171a1f" font-family="Georgia, serif" font-size="54" font-weight="500">Spotify Playlists</text>
+  <text x="66" y="249" fill="#66716b" font-family="Inter, Arial, sans-serif" font-size="20">playlists.njmurray.com</text>
+  <circle cx="1018" cy="160" r="87" fill="#fffef9" stroke="#c18426" stroke-width="3"/>
+  <path d="M976 128c34-9 70-6 99 7M981 157c28-7 58-4 83 6M988 185c20-5 42-3 60 5" fill="none" stroke="#c18426" stroke-width="9" stroke-linecap="round"/>
+  <rect y="310" width="1200" height="10" fill="#c18426"/>
+</svg>
