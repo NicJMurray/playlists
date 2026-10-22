@@ -12,14 +12,14 @@
 - Repository: `NicJMurray/playlists`
 - Production branch: `main`
 - Framework preset: `None`
-- Build command: leave blank
-- Build output directory: `.`
+- Build command: `npm run build`
+- Build output directory: `dist`
 - Custom domain: `playlists.njmurray.com`
 - DNS: proxied CNAME to `playlists-git.pages.dev`
 
 ## Editing workflow
 
-Edit the repo, commit to `main`, and Cloudflare deploys automatically.
+Run `npm run build`, commit the source to `main`, and Cloudflare deploys automatically. The build publishes only `index.html`, keeping repository documentation and development files out of the public assets.
 
 The original `playlists` Pages project used Direct Upload and is retained as a fallback. Production uses `playlists-git` because Direct Upload projects cannot be converted to Git integration.
 

@@ -138,7 +138,7 @@ If a cover request fails, the card structure and Spotify link remain, but there 
 | --- | --- |
 | `index.html` | Playlist records, complete page structure, inline CSS, analytics, and footer script. |
 | `wrangler.toml` | Cloudflare Pages project and static-output configuration. |
-| `package.json` | Wrangler development command; no application build step. |
+| `package.json` | Wrangler development and static build commands. |
 | `DEPLOYMENT.md` | Hosting and domain reference. |
 
 ## Change map
@@ -160,3 +160,8 @@ If a cover request fails, the card structure and Spotify link remain, but there 
 - Public CDN image URLs may change independently of playlist URLs.
 - There is no client-side search, sorting, grouping, or filtering.
 - Inline CSS keeps the page self-contained but concentrates structure, data, and presentation in one file.
+
+
+## Publishing
+
+Run `npm run build`, then commit and push to `main`. Cloudflare Pages builds and publishes the gallery automatically; see [DEPLOYMENT.md](DEPLOYMENT.md).

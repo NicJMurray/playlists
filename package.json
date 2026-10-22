@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "wrangler pages dev ."
+    "dev": "wrangler pages dev .",
+    "build": "node scripts/build.mjs"
   },
   "devDependencies": {
     "wrangler": "^4.88.0"
